@@ -20,15 +20,14 @@ public final class BukkitHelloWorld extends JavaPlugin {
 	public boolean fuck(CommandSender sender, Player target) {
 		if (sender == target) {
 			sender.sendMessage("You can not fuck yourself!");
-			return false;
 		} else if (sender.hasPermission("fuck.qualifiedToFuck")) {
+			target.getWorld().createExplosion(target.getLocation(), 1);
 			target.sendMessage("You have just been fucked by "+sender.getName()+"!");
 			sender.sendMessage("You have just fucked "+target.getName());
-			return true;
 		} else {
 			sender.sendMessage("You are not qualified to fuck somebody!");
-			return false;
 		}
+		return true;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -37,12 +36,12 @@ public final class BukkitHelloWorld extends JavaPlugin {
 				Player target = (Bukkit.getServer().getPlayer(args[0]));
 				return (fuck(sender, target));
 			} catch (Exception ex) {
-				if (args[0] == null) {
+				if (args.length == 0) {
 					sender.sendMessage("I don't know which player you wanted to fuck");
 				} else {
 					sender.sendMessage("The player you wanted to fuck with is offline.");
+					return true;
 				}
-	            return false;
 	        } 
 		}
 		return false;
