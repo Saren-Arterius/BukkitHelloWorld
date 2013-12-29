@@ -37,7 +37,11 @@ public final class BukkitHelloWorld extends JavaPlugin {
 				Player target = (Bukkit.getServer().getPlayer(args[0]));
 				return (fuck(sender, target));
 			} catch (Exception ex) {
-				sender.sendMessage("I don't know which player you wanted to fuck, or the player you wanted to fuck with is offline.");
+				if (args[0] == null) {
+					sender.sendMessage("I don't know which player you wanted to fuck");
+				} else {
+					sender.sendMessage("The player you wanted to fuck with is offline.");
+				}
 	            return false;
 	        } 
 		}

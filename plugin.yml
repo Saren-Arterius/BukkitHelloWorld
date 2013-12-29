@@ -1,6 +1,6 @@
 name: BukkitHelloWorld
 version: 0.0.1a
-description: This plugin is fucking useless.
+description: This plugin is truly fucking useless.
 author: Saren
 website: https://github.com/Shaorune/BukkitHelloWorld/
  
@@ -11,7 +11,7 @@ commands:
     fuck:
         description: Fuck somebody.
         permission: fuck.qualifiedToFuck
-        usage: Type /<command> to fuck somebody.
+        usage: Type /<command> (somebody) to fuck somebody.
  
 permissions:
     fuck.*:
