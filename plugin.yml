@@ -1,6 +1,6 @@
 name: BukkitHelloWorld
-version: 0.0.1a
-description: This plugin is truly fucking useless.
+version: 0.0.1b
+description: This plugin is fucking useless.
 author: Saren
 website: https://github.com/Shaorune/BukkitHelloWorld/
  
@@ -10,14 +10,19 @@ database: false
 commands:
     fuck:
         description: Fuck somebody.
-        permission: fuck.qualifiedToFuck
         usage: Type /<command> (somebody) to fuck somebody.
+        permission: fuck.qualifiedToFuck
+        permission-message: You are not qualified to fuck with somebody!
  
 permissions:
     fuck.*:
         description: Gives access to all BukkitHelloWorld commands.
         children:
             fuck.qualifiedToFuck: true
+            fuck.allowsSelfFucking: true
     fuck.qualifiedToFuck:
         description: Allows you to fuck somebody.
+        default: op
+    fuck.allowsSelfFucking:
+        description: Allows you to fuck yourself.
         default: op

@@ -18,14 +18,15 @@ public final class BukkitHelloWorld extends JavaPlugin {
 	}
 
 	public boolean fuck(CommandSender sender, Player target) {
-		if (sender == target) {
-			sender.sendMessage("You can not fuck yourself!");
-		} else if (sender.hasPermission("fuck.qualifiedToFuck")) {
+		if (sender == target && sender.hasPermission("fuck.qualifiedToFuck")) {
+			target.getWorld().createExplosion(target.getLocation(), 1);
+			target.sendMessage("You are awesome enough to fuck yourself and you just fucked yourself! Woohoo.");
+		} else if (sender == target) {
+			target.sendMessage("You can not fuck yourself you are not awesome enough!");
+		} else {
 			target.getWorld().createExplosion(target.getLocation(), 1);
 			target.sendMessage("You have just been fucked by "+sender.getName()+"!");
 			sender.sendMessage("You have just fucked "+target.getName());
-		} else {
-			sender.sendMessage("You are not qualified to fuck somebody!");
 		}
 		return true;
 	}
