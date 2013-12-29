@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class HelloWorld extends JavaPlugin {
+public final class BukkitHelloWorld extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
@@ -18,9 +18,12 @@ public final class HelloWorld extends JavaPlugin {
 	}
 
 	public boolean fuck(CommandSender sender, Player target) {
-		if (sender.hasPermission("fuck.qualifiedToFuck")) {
+		if (sender == target) {
+			sender.sendMessage("You can not fuck yourself!");
+			return false;
+		} else if (sender.hasPermission("fuck.qualifiedToFuck")) {
 			target.sendMessage("You have just been fucked by "+sender.getName()+"!");
-			sender.sendMessage("You have just fucked"+target.getName());
+			sender.sendMessage("You have just fucked "+target.getName());
 			return true;
 		} else {
 			sender.sendMessage("You are not qualified to fuck somebody!");
@@ -30,8 +33,13 @@ public final class HelloWorld extends JavaPlugin {
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("fuck")) {
-			Player target = (Bukkit.getServer().getPlayer(args[0]));
-			return (fuck(sender, target));
+			try {
+				Player target = (Bukkit.getServer().getPlayer(args[0]));
+				return (fuck(sender, target));
+			} catch (Exception ex) {
+				sender.sendMessage("I don't know which player you wanted to fuck, or the player you wanted to fuck with is offline.");
+	            return false;
+	        } 
 		}
 		return false;
 	}
