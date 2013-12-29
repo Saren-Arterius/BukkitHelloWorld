@@ -17,16 +17,20 @@ public final class BukkitHelloWorld extends JavaPlugin {
 		getLogger().info("Good-bye bloody chalon!");
 	}
 
-	public boolean fuck(CommandSender sender, Player target) {
+	public boolean fuck(CommandSender sender, Player target, int radius, int times) {
 		if (sender == target && sender.hasPermission("fuck.qualifiedToFuck")) {
-			target.getWorld().createExplosion(target.getLocation(), 1);
+			for (int i = 0; i<times; i++) {
+				target.getWorld().createExplosion(target.getLocation(), radius);
+			}
 			target.sendMessage("You are awesome enough to fuck yourself and you just fucked yourself! Woohoo.");
 		} else if (sender == target) {
 			target.sendMessage("You can not fuck yourself you are not awesome enough!");
 		} else {
-			target.getWorld().createExplosion(target.getLocation(), 1);
-			target.sendMessage("You have just been fucked by "+sender.getName()+"!");
-			sender.sendMessage("You have just fucked "+target.getName());
+			for (int i = 0; i<times; i++) {
+				target.getWorld().createExplosion(target.getLocation(), radius);
+			}
+			target.sendMessage("You have just been fucked by "+sender.getName()+" for "+Integer.toString(times)+" times!");
+			sender.sendMessage("You have just fucked "+target.getName()+" for "+Integer.toString(times)+" times!");
 		}
 		return true;
 	}
@@ -35,8 +39,16 @@ public final class BukkitHelloWorld extends JavaPlugin {
 		if(cmd.getName().equalsIgnoreCase("fuck")) {
 			try {
 				Player target = (Bukkit.getServer().getPlayer(args[0]));
-				return (fuck(sender, target));
-			} catch (Exception ex) {
+				try {
+					return (fuck(sender, target, Integer.parseInt(args[1]), Integer.parseInt(args[2])));
+				} catch (Exception ex1) {
+					try {
+						return (fuck(sender, target, Integer.parseInt(args[1]), 1));
+					} catch (Exception ex2) {
+						return (fuck(sender, target, 1, 1));
+					}
+				}
+			} catch (Exception ex3) {
 				if (args.length == 0) {
 					sender.sendMessage("I don't know which player you wanted to fuck");
 				} else {
