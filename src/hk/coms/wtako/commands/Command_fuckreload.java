@@ -4,19 +4,19 @@ import hk.coms.wtako.Main;
 import hk.coms.wtako.method.Reload;
 
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Command_fuckreload extends CommandHandler {
+public class Command_fuckreload implements CommandExecutor {
 
-    public Main plugin;
+    private Main plugin;
     
     public Command_fuckreload(Main plugin) {
-        super(plugin);
         this.plugin = plugin;
     }
     
-    public boolean run(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("fuckreload")) {
             Reload reload = new Reload();
             reload.execute();

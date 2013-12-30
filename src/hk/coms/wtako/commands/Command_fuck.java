@@ -2,27 +2,27 @@ package hk.coms.wtako.commands;
 
 import java.text.MessageFormat;
 
-import hk.coms.wtako.Main;
-import hk.coms.wtako.method.Fuck;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Command_fuck extends CommandHandler {
+import hk.coms.wtako.Main;
+import hk.coms.wtako.method.Fuck;
 
-    public Main plugin;
+public class Command_fuck implements CommandExecutor {
+
+    private Main plugin;
     private Player target;
     private int power;
     private int times;
-
+    
     public Command_fuck(Main plugin) {
-        super(plugin);
         this.plugin = plugin;
     }
-    
-    public boolean run(CommandSender sender, Command cmd, String label, String[] args) {
+
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         
         if (cmd.getName().equalsIgnoreCase("fuck")) {
             try {
