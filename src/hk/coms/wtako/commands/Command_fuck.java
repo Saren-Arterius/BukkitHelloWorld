@@ -44,6 +44,7 @@ public class Command_fuck implements CommandExecutor {
                 times = Integer.parseInt(args[2]);
                 if (!(sender.hasPermission("fuck.allowsLimitsOverriding"))) {
                     if (times > this.plugin.getConfig().getInt("limit.fuckTimes")) {
+                        sender.sendMessage(this.plugin.getConfig().getString("message.notStrongEnoughTimes"));
                         times = this.plugin.getConfig().getInt("limit.fuckTimes");
                     }
                 }
@@ -55,6 +56,7 @@ public class Command_fuck implements CommandExecutor {
                 power = Integer.parseInt(args[1]);
                 if (!(sender.hasPermission("fuck.allowsLimitsOverriding"))) {
                     if (power > this.plugin.getConfig().getInt("limit.fuckPower")) {
+                        sender.sendMessage(this.plugin.getConfig().getString("message.notStrongEnoughPower"));
                         power = this.plugin.getConfig().getInt("limit.fuckPower");
                     }
                 }
@@ -69,11 +71,11 @@ public class Command_fuck implements CommandExecutor {
                 return (victim.execute(power, times));
             } else if (target != sender) {
                 String msg1 = this.plugin.getConfig().getString("message.justBeenFucked");
-                msg1 = MessageFormat.format(msg1, this.plugin.getName(), times);
+                msg1 = MessageFormat.format(msg1, sender.getName(), times);
                 target.sendMessage(msg1);
                 
                 String msg2 = this.plugin.getConfig().getString("message.justFuckedSomebody");
-                msg2 = MessageFormat.format(msg2, this.plugin.getName(), times);
+                msg2 = MessageFormat.format(msg2, target.getName(), times);
                 sender.sendMessage(msg2);
                 
                 return (victim.execute(power, times));
