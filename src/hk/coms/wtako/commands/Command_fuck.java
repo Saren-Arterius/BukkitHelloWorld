@@ -27,6 +27,9 @@ public class Command_fuck implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("fuck")) {
             try {
                 target = (Bukkit.getServer().getPlayer(args[0]));
+                if (target == null) {
+                    throw new Exception();
+                }
             } catch (Exception ex3) {
                 if (args.length == 0) {
                     sender.sendMessage(this.plugin.getConfig().getString("message.playerNotSpecfied"));
