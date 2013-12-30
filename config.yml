@@ -1,3 +1,6 @@
+limit:
+    fuckPower: 10
+    fuckTimes: 10
 message:
     playerNotSpecfied: §cI don't know which player you wanted to fuck.
     playerNotFound: §cThe player you wanted to fuck with is offline.

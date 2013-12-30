@@ -1,5 +1,5 @@
 name: BukkitHelloWorld
-version: 0.0.1b
+version: 0.0.1c
 description: This plugin is fucking useless.
 author: Saren
 website: https://github.com/Shaorune/BukkitHelloWorld/
@@ -25,12 +25,16 @@ permissions:
         children:
             fuck.qualifiedToFuck: true
             fuck.allowsSelfFucking: true
+            fuck.allowsLimitsOverriding: true
             fuck.reload: true
     fuck.qualifiedToFuck:
         description: Allows you to fuck somebody.
         default: op
     fuck.allowsSelfFucking:
         description: Allows you to fuck yourself.
+        default: op
+    fuck.allowsLimitsOverriding:
+        description: Allows you to override the limits.
         default: op
     fuck.reload:
         description: Allows you to reload your penis.
