@@ -1,9 +1,9 @@
 message:
-    playerNotSpecfied: I don't know which player you wanted to fuck.
-    playerNotFound: The player you wanted to fuck with is offline.
-    canNotFuckSelf: You can not fuck yourself because you are not awesome enough!
-    canFuckSelf: You are awesome enough to fuck yourself and you just fucked yourself! Woohoo.
+    playerNotSpecfied: §cI don't know which player you wanted to fuck.
+    playerNotFound: §cThe player you wanted to fuck with is offline.
+    canNotFuckSelf: §cYou can not fuck yourself because you are not awesome enough!
+    canFuckSelf: You just fucked yourself! Woohoo.
     justBeenFucked: You have just been fucked by {0} for {1} times!
     justFuckedSomebody: You have just fucked {0} for {1} times!
-    pluginReloadedConsole: Somebody just reloaded her penis!
-    pluginReloadedPlayer: You just reloaded your penis!
+    pluginReloadedConsole: §aSomebody just reloaded her penis!
+    pluginReloadedPlayer: §aYou just reloaded your penis!

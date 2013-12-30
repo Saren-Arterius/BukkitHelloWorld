@@ -4,7 +4,7 @@ description: This plugin is fucking useless.
 author: Saren
 website: https://github.com/Shaorune/BukkitHelloWorld/
  
-main: hk.coms.wtako.BukkitHelloWorld
+main: hk.coms.wtako.Main
 database: false
  
 commands:
@@ -13,7 +13,7 @@ commands:
         usage: Type /<command> (somebody) to fuck somebody.
         permission: fuck.qualifiedToFuck
         permission-message: You are not qualified to fuck with somebody!
-    reloadfuck:
+    fuckreload:
         description: Reload this plugin.
         usage: Type /<command> to reload this plugin.
         permission: fuck.reload
