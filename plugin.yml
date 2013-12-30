@@ -13,16 +13,25 @@ commands:
         usage: Type /<command> (somebody) to fuck somebody.
         permission: fuck.qualifiedToFuck
         permission-message: You are not qualified to fuck with somebody!
- 
+    reloadfuck:
+        description: Reload this plugin.
+        usage: Type /<command> to reload this plugin.
+        permission: fuck.reload
+        permission-message: You are not qualified to reload your penis!
+
 permissions:
     fuck.*:
         description: Gives access to all BukkitHelloWorld commands.
         children:
             fuck.qualifiedToFuck: true
             fuck.allowsSelfFucking: true
+            fuck.reload: true
     fuck.qualifiedToFuck:
         description: Allows you to fuck somebody.
         default: op
     fuck.allowsSelfFucking:
         description: Allows you to fuck yourself.
+        default: op
+    fuck.reload:
+        description: Allows you to reload your penis.
         default: op
