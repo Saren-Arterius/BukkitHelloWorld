@@ -9,13 +9,11 @@ BukkitHelloWorld
 
 # config.yml
 
-limit:
-
-    fuckPower: 10 # The maximum fuck power of a player.
-    fuckTimes: 10 # The maximum fuck times of a player.
-message:
-
-    # Your localizations
+    limit:
+        fuckPower: 10 # The maximum fuck power of a player.
+        fuckTimes: 10 # The maximum fuck times of a player.
+    message:
+        # Your localizations
 # permissions
 
     fuck.*:
