@@ -18,7 +18,7 @@ public class Command_fuckreload implements CommandExecutor {
     
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("fuckreload")) {
-            Reload reload = new Reload();
+            Reload reload = new Reload(this.plugin);
             reload.execute();
             this.plugin.getLogger().info(this.plugin.getConfig().getString("message.pluginReloadedConsole"));
             if (sender instanceof Player) {

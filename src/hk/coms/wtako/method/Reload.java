@@ -1,13 +1,19 @@
 package hk.coms.wtako.method;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import hk.coms.wtako.Main;
 
-public class Reload extends JavaPlugin {
+public class Reload {
+    
+    private Main plugin;
+
+    public Reload(Main plugin) {
+        this.plugin = plugin;
+    }
     
     public boolean execute() {
-        this.saveDefaultConfig();
-        this.getConfig().options().copyDefaults(true);
-        this.reloadConfig();
+        this.plugin.saveDefaultConfig();
+        this.plugin.getConfig().options().copyDefaults(true);
+        this.plugin.reloadConfig();
         return true;
     }
 
