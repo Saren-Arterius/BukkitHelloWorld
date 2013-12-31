@@ -4,7 +4,7 @@ description: This plugin is fucking useless.
 author: Saren
 website: https://github.com/Shaorune/BukkitHelloWorld/
  
-main: hk.coms.wtako.Main
+main: hk.coms.wtako.BukkitHelloWorld.Main
 database: false
  
 commands:
