@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import hk.coms.wtako.BukkitHelloWorld.Main;
-import hk.coms.wtako.BukkitHelloWorld.method.Fuck;
+import hk.coms.wtako.BukkitHelloWorld.methods.Fuck;
 
 public class Command_fuck implements CommandExecutor {
 

@@ -1,4 +1,4 @@
-package hk.coms.wtako.BukkitHelloWorld.method;
+package hk.coms.wtako.BukkitHelloWorld.methods;
 
 import org.bukkit.entity.Player;
 

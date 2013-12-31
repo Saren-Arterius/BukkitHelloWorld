@@ -1,7 +1,7 @@
 package hk.coms.wtako.BukkitHelloWorld.commands;
 
 import hk.coms.wtako.BukkitHelloWorld.Main;
-import hk.coms.wtako.BukkitHelloWorld.method.Reload;
+import hk.coms.wtako.BukkitHelloWorld.methods.Reload;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
