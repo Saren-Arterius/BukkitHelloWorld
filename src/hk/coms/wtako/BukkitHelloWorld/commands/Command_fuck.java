@@ -1,4 +1,4 @@
-package hk.coms.wtako.commands;
+package hk.coms.wtako.BukkitHelloWorld.commands;
 
 import java.text.MessageFormat;
 
@@ -8,8 +8,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import hk.coms.wtako.Main;
-import hk.coms.wtako.method.Fuck;
+import hk.coms.wtako.BukkitHelloWorld.Main;
+import hk.coms.wtako.BukkitHelloWorld.method.Fuck;
 
 public class Command_fuck implements CommandExecutor {
 

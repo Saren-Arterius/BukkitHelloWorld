@@ -1,7 +1,7 @@
-package hk.coms.wtako;
+package hk.coms.wtako.BukkitHelloWorld;
 
-import hk.coms.wtako.commands.Command_fuck;
-import hk.coms.wtako.commands.Command_fuckreload;
+import hk.coms.wtako.BukkitHelloWorld.commands.Command_fuck;
+import hk.coms.wtako.BukkitHelloWorld.commands.Command_fuckreload;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

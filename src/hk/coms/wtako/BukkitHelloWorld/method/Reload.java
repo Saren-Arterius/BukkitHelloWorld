@@ -1,6 +1,6 @@
-package hk.coms.wtako.method;
+package hk.coms.wtako.BukkitHelloWorld.method;
 
-import hk.coms.wtako.Main;
+import hk.coms.wtako.BukkitHelloWorld.Main;
 
 public class Reload {
     
